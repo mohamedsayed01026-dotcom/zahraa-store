@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAHRA | زهرة - متجر الأزياء الإسلامية والمحتشمة الفاخرة</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230F4C3A'><circle cx='12' cy='12' r='10'/><path fill='%23D4AF37' d='M12 4l2.5 5.5L20 10l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z'/></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            DEFAULT: '#0F4C3A',
+                            50: '#F0F7F4',
+                            100: '#D9ECE4',
+                            200: '#B4D9CB',
+                            700: '#0F4C3A',
+                            800: '#0B3B2D',
+                            900: '#082C21',
+                            950: '#051E17',
+                        },
+                        blush: {
+                            DEFAULT: '#E8C5C8',
+                            50: '#FCF7F7',
+                            100: '#FAF0F1',
+                            200: '#F5E1E3',
+                            300: '#E8C5C8',
+                            400: '#DBA5AA',
+                            500: '#CD848C',
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F5E7B2',
+                            hover: '#C29D26',
+                            dark: '#997A16',
+                        },
+                        cream: {
+                            DEFAULT: '#FAF9F6',
+                            100: '#FAF9F6',
+                            200: '#F3F0E8',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        amiri: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-cream selection:bg-emerald-100 selection:text-emerald-900 font-sans min-h-screen flex flex-col relative">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-6 z-50 bg-emerald-950 text-cream px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-gold/40 transition-all duration-300 transform translate-y-2 opacity-0 hidden">
+        <span class="text-gold text-lg">✦</span>
+        <p id="toast-text" class="font-medium text-sm">تم الإجراء بنجاح</p>
+    </div>
+
+    <!-- 1. Top Quick Contact Bar -->
+    <div class="bg-emerald-950 text-cream text-xs py-2.5 px-4 border-b border-emerald-900">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+
+            <!-- Right: Phone & WhatsApp Quick Connect -->
+            <div class="flex items-center gap-4 flex-wrap justify-center">
+                <a href="https://wa.me/201050951653" target="_blank" class="flex items-center gap-1.5 hover:text-gold transition font-medium">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+                    <span>خدمة العملاء والطلب الفوري عبر واتساب:</span>
+                    <strong class="text-gold tracking-wider dir-ltr font-mono">01050951653</strong>
+                </a>
+            </div>
+
+            <!-- Left: Direct Social Links -->
+            <div class="flex items-center gap-4 text-cream/80">
+                <div class="flex items-center gap-3">
+                    <a href="https://www.facebook.com/share/1BB6dre7mp/" target="_blank" rel="noopener noreferrer" class="hover:text-gold flex items-center gap-1 transition" title="صفحتنا على فيسبوك">
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <span class="text-[11px] hidden sm:inline">فيسبوك</span>
+                    </a>
+                    <a href="https://t.me/z010322" target="_blank" rel="noopener noreferrer" class="hover:text-gold flex items-center gap-1 transition" title="قناتنا على تلجرام">
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.942z"/></svg>
+                        <span class="text-[11px] hidden sm:inline">تلجرام</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@zahra.hijab0?_r=1&_t=ZS-9AZy7uz3Zw5" target="_blank" rel="noopener noreferrer" class="hover:text-gold flex items-center gap-1 transition" title="حسابنا على تيك توك">
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                        <span class="text-[11px] hidden sm:inline">تيك توك</span>
+                    </a>
+                    <a href="https://wa.me/201050951653" target="_blank" rel="noopener noreferrer" class="hover:text-gold flex items-center gap-1 transition text-green-400" title="دردشة واتساب مباشرة">
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        <span class="text-[11px] hidden sm:inline">واتساب</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2. Header & Main Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md shadow-sm border-b border-blush/30 py-3.5 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-full emerald-gradient-bg flex items-center justify-center shadow-md border border-gold/40 group-hover:scale-105 transition-transform">
+                        <svg class="w-6 h-6 text-gold fill-current" viewBox="0 0 24 24">
+                          <path d="M12 2C13.5 5 15.5 7 19 8C16 9.5 14 11.5 13 15C11.5 12 9.5 10 6 9C9 7.5 11 5.5 12 2Z"/>
+                          <circle cx="12" cy="12" r="2.5" fill="#FAF9F6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-2xl font-bold font-serif-ar tracking-tight text-emerald-950 group-hover:text-gold transition">زَهْـرَة</span>
+                            <span class="text-xs font-bold tracking-widest text-gold uppercase font-en-serif">ZAHRA</span>
+                        </div>
+                        <p class="text-[10px] text-emerald-800/70 -mt-1 hidden sm:block">أصالة المظهر.. وجمال الجوهر</p>
+                    </div>
+                </a>
+
+                <!-- Navigation Links (Desktop) -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-emerald-950">
+                    <a href="#hero" class="text-emerald-900 border-b-2 border-gold pb-0.5">الرئيسية</a>
+                    <a href="#catalog" class="hover:text-emerald-700 transition">معرض المنتجات</a>
+                    <a href="#features" class="hover:text-emerald-700 transition">مميزاتنا</a>
+                    <a href="#social-contact" class="hover:text-emerald-700 transition">تواصل معنا</a>
+                </nav>
+
+                <!-- Header Actions: Search, WhatsApp Direct, Cart -->
+                <div class="flex items-center gap-2 sm:gap-3">
+
+                    <!-- Search toggle -->
+                    <a href="#catalog" class="p-2 rounded-full hover:bg-emerald-50 text-emerald-900 transition" title="البحث في المعرض">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </a>
+
+                    <!-- WhatsApp Direct Order Button in Header -->
+                    <a href="https://wa.me/201050951653" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 text-xs font-bold border border-emerald-200 transition">
+                        <svg class="w-4 h-4 text-green-600 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        <span>01050951653</span>
+                    </a>
+
+                    <!-- Cart Button -->
+                    <button id="open-cart-btn" class="p-2.5 rounded-full emerald-gradient-bg text-gold hover:opacity-95 transition relative shadow-sm" title="سلة المشتريات">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                        <span id="cart-counter" class="absolute -top-1 -right-1 bg-gold text-emerald-950 text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-md border-2 border-cream">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg text-emerald-900 hover:bg-emerald-50 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Mobile Navigation Drawer -->
+            <div id="mobile-menu" class="hidden md:hidden mt-3 pt-3 border-t border-blush/40 flex flex-col gap-2 pb-2">
+                <a href="#hero" class="py-2 px-3 rounded-lg hover:bg-emerald-50 font-bold text-emerald-900">الرئيسية</a>
+                <a href="#catalog" class="py-2 px-3 rounded-lg hover:bg-emerald-50 text-emerald-950">معرض المنتجات</a>
+                <a href="#features" class="py-2 px-3 rounded-lg hover:bg-emerald-50 text-emerald-950">مميزاتنا</a>
+                <a href="#social-contact" class="py-2 px-3 rounded-lg hover:bg-emerald-50 text-emerald-950">تواصل معنا</a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- 3. Hero Section -->
+    <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-cream via-cream to-[#FCF7F7] pt-8 pb-16 lg:py-20 border-b border-blush/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+                <!-- Text Content -->
+                <div class="lg:col-span-6 text-right">
+
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-900 text-xs font-semibold mb-5 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                        <span>علامة ZAHRA (زهرة) للأزياء المحتشمة الفاخرة</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif-ar text-emerald-950 leading-tight mb-4">
+                        أصَالَةُ المَظْهَر.. <br/>
+                        <span class="gold-gradient-text">وَجَمَالُ الجَوْهَر</span>
+                    </h1>
+
+                    <p className="text-base sm:text-lg text-emerald-900/80 leading-relaxed font-normal mb-8 max-w-xl">
+                        مرحباً بكِ في عالم <strong>ZAHRA (زهرة)</strong>؛ وجهتكِ الراقية لأحدث تصاميم العبايات، إسدالات الصلاة، والشالات الإسلامية الفاخرة، المصممة بحرفية عالية لتجمع بين الستر والراحة والأناقة المعاصرة.
+                    </p>
+
+                    <!-- Buttons & Direct Contact -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8">
+                        <a href="https://wa.me/201050951653?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D9%85%D8%AA%D8%AC%D8%B1%20ZAHRA%20%D9%84%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%D9%83%D9%85"
+                            target="_blank" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-emerald-800 to-emerald-950 text-cream font-bold text-center text-sm shadow-lg hover:shadow-gold border border-gold/40 transition flex items-center justify-center gap-2 group">
+                            <svg class="w-5 h-5 text-green-400 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                            <span>طلب مباشر عبر واتساب (01050951653)</span>
+                        </a>
+
+                        <a href="#catalog" class="px-6 py-3.5 rounded-xl bg-white hover:bg-cream text-emerald-950 font-bold text-center text-sm border border-emerald-900/20 shadow-sm transition">
+                            تصفحي معرض المنتجات ↓
+                        </a>
+                    </div>
+
+                    <!-- Quick Connect Badges -->
+                    <div class="pt-6 border-t border-blush/40 flex items-center gap-5 flex-wrap">
+                        <div class="flex items-center gap-2 text-xs font-semibold text-emerald-900">
+                            <span class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-200">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </span>
+                            <a href="https://www.facebook.com/share/1BB6dre7mp/" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition">متابعة على فيسبوك</a>
+                        </div>
+
+                        <div class="flex items-center gap-2 text-xs font-semibold text-emerald-900">
+                            <span class="w-8 h-8 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center border border-sky-200">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.942z"/></svg>
+                            </span>
+                            <a href="https://t.me/z010322" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition">قناة التلجرام الرسمية</a>
+                        </div>
+
+                        <div class="flex items-center gap-2 text-xs font-semibold text-emerald-900">
+                            <span class="w-8 h-8 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center border border-pink-200">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                            </span>
+                            <a href="https://www.tiktok.com/@zahra.hijab0?_r=1&_t=ZS-9AZy7uz3Zw5" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition">حسابنا على تيك توك</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Visual Media -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                            <img src="assets/images/hero-banner.jpg" alt="عباية زهرة الأيقونية" class="w-full h-[460px] sm:h-[500px] object-cover object-top hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent"></div>
+
+                            <div class="absolute bottom-5 right-5 left-5 text-white p-4 rounded-2xl bg-emerald-950/80 backdrop-blur-md border border-gold/40 flex items-center justify-between">
+                                <div>
+                                    <span class="text-[11px] font-bold text-gold uppercase">التشكيلة المميزة</span>
+                                    <h3 class="font-bold text-base text-cream">عباية زهرة الملكية</h3>
+                                </div>
+                                <a href="https://wa.me/201050951653?text=%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%A8%D8%A7%D9%8A%D8%A9%20%D8%B2%D9%87%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A%D8%A9" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-gold text-emerald-950 text-xs font-bold hover:bg-gold-light transition">
+                                    اطلبي الآن 💬
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Value Propositions Strip -->
+    <section id="features" class="bg-white py-8 border-b border-blush/30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <div class="flex items-center gap-3.5 p-2">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-100">
+                        🌿
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-emerald-950">أقمشة باردة ومريحة</h4>
+                        <p class="text-xs text-emerald-800/70">خامات طبيعية 100% صيفاً وشتاءً</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3.5 p-2">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-100">
+                        🕊️
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-emerald-950">قصات شرعية ساترة</h4>
+                        <p class="text-xs text-emerald-800/70">حشمة راقية وأناقة لا تضاهى</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3.5 p-2">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-100">
+                        ⚡
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-emerald-950">شحن وتوصيل سريع</h4>
+                        <p class="text-xs text-emerald-800/70">لكافة المحافظات وبأفضل الأسعار</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3.5 p-2">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-100">
+                        💬
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-emerald-950">طلب ومتابعة واتساب</h4>
+                        <p class="text-xs text-emerald-800/70">دعم مستمر على 01050951653</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Product Catalog Section (معرض المنتجات) -->
+    <section id="catalog" class="py-16 bg-cream border-b border-blush/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-gold uppercase tracking-wider block mb-2">كتالوج ZAHRA الحصري</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-serif-ar text-emerald-950 mb-3">
+                    معرض منتجات زهرة (ZAHRA)
+                </h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mb-3"></div>
+                <p class="text-sm text-emerald-900/70">
+                    تصفحي أحدث القطع المختارة بعناية. يمكنكِ الطلب المباشر بنقرة واحدة عبر الواتساب أو إضافتها لسلة التسوق.
+                </p>
+            </div>
+
+            <!-- Search & Category Filters Bar -->
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-blush/40 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
+
+                <!-- Search Input -->
+                <div class="relative w-full md:w-80">
+                    <input type="text" id="store-search" placeholder="ابحثي بالاسم أو الوصف أو القسم..." class="w-full pl-4 pr-10 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-emerald-700 text-sm text-emerald-950 bg-cream" />
+                    <svg class="w-4 h-4 text-emerald-800 absolute right-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+
+                <!-- Category Pills -->
+                <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0" id="category-filters">
+                    <button class="cat-pill-btn active px-4 py-2 rounded-xl text-xs font-bold transition bg-emerald-900 text-gold shadow-sm shrink-0" data-cat="all">
+                        جميع المنتجات
+                    </button>
+                    <button class="cat-pill-btn px-4 py-2 rounded-xl text-xs font-semibold transition bg-cream text-emerald-900 hover:bg-emerald-50 shrink-0" data-cat="عبايات">
+                        العبايات
+                    </button>
+                    <button class="cat-pill-btn px-4 py-2 rounded-xl text-xs font-semibold transition bg-cream text-emerald-900 hover:bg-emerald-50 shrink-0" data-cat="إسدالات الصلاة">
+                        إسدالات الصلاة
+                    </button>
+                    <button class="cat-pill-btn px-4 py-2 rounded-xl text-xs font-semibold transition bg-cream text-emerald-900 hover:bg-emerald-50 shrink-0" data-cat="طرح وشالات">
+                        طرح وشالات
+                    </button>
+                    <button class="cat-pill-btn px-4 py-2 rounded-xl text-xs font-semibold transition bg-cream text-emerald-900 hover:bg-emerald-50 shrink-0" data-cat="أزياء محتشمة">
+                        أزياء محتشمة
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Rendered dynamically via store.js & inline script -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. Dedicated Social & Quick Contact Section -->
+    <section id="social-contact" class="py-16 bg-white border-b border-blush/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="p-8 sm:p-12 rounded-3xl emerald-gradient-bg text-cream shadow-2xl border border-gold/40 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+
+                    <div class="lg:col-span-7 text-right">
+                        <span class="text-xs font-bold text-gold uppercase tracking-wider block mb-2">قنوات التواصل الرسمية</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold font-serif-ar text-cream mb-4">
+                            نحن دائماً بالقرب منكِ.. تواصلي معنا مباشرة
+                        </h3>
+                        <p class="text-sm text-cream/80 leading-relaxed mb-6">
+                            يسعد فريق علامة <strong>ZAHRA (زهرة)</strong> بالرد على كافة استفساراتكِ، استلام طلباتكِ الخاصة، ومساعدتكِ في اختيار المقاس والتصميم الأنسب لكِ عبر قنواتنا المعتمدة.
+                        </p>
+
+                        <div class="flex items-center gap-3 flex-wrap">
+                            <!-- WhatsApp Card Button -->
+                            <a href="https://wa.me/201050951653" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                                <span>واتساب: 01050951653</span>
+                            </a>
+
+                            <!-- Facebook Button -->
+                            <a href="https://www.facebook.com/share/1BB6dre7mp/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                <span>صفحة فيسبوك</span>
+                            </a>
+
+                            <!-- Telegram Button -->
+                            <a href="https://t.me/z010322" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md transition flex items-center gap-2">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.942z"/></svg>
+                                <span>قناة تلجرام</span>
+                            </a>
+
+                            <!-- TikTok Button -->
+                            <a href="https://www.tiktok.com/@zahra.hijab0?_r=1&_t=ZS-9AZy7uz3Zw5" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-neutral-900 hover:bg-black text-white font-bold text-xs shadow-md transition flex items-center gap-2 border border-white/10">
+                                <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                                <span>حساب تيك توك</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 text-center p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+                        <span class="text-4xl mb-2 block">📱</span>
+                        <h4 class="font-bold text-lg text-cream mb-1">الرقم المباشر للاتصال والواتساب</h4>
+                        <p class="text-2xl font-bold font-mono text-gold tracking-widest my-2 dir-ltr">
+                            <a href="tel:01050951653" class="hover:underline">01050951653</a>
+                        </p>
+                        <p class="text-xs text-cream/70 mb-4">متاح يومياً للرد على الرسائل والطلبات</p>
+                        <a href="https://wa.me/201050951653" target="_blank" class="inline-block w-full py-2.5 rounded-xl bg-gold text-emerald-950 font-bold text-xs hover:bg-gold-light transition shadow-md">
+                            فتح المحادثة الفورية في واتساب
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. Footer Section -->
+    <footer class="bg-emerald-950 text-cream pt-14 pb-8 border-t border-emerald-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-10 border-b border-emerald-900/60">
+
+                <!-- Brand Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full emerald-gradient-bg flex items-center justify-center border border-gold/40">
+                            <svg class="w-5 h-5 text-gold fill-current" viewBox="0 0 24 24"><path d="M12 2C13.5 5 15.5 7 19 8C16 9.5 14 11.5 13 15C11.5 12 9.5 10 6 9C9 7.5 11 5.5 12 2Z"/></svg>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-bold font-serif-ar text-cream">زَهْـرَة</span>
+                            <span class="text-xs font-bold text-gold mr-2 font-en-serif">ZAHRA</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-cream/70 leading-relaxed mb-4">
+                        علامة أزياء إسلامية معاصرة تهتم بأدق تفاصيل الحشمة والوقار بأسلوب حديث يواكب أحدث خطوط الموضة المحتشمة.
+                    </p>
+                    <p class="text-xs font-semibold text-gold">"أصالة المظهر.. وجمال الجوهر"</p>
+                </div>
+
+                <!-- Quick Contact Info -->
+                <div>
+                    <h4 class="text-sm font-bold text-gold mb-4 uppercase tracking-wider">الاتصال والتواصل المباشر</h4>
+                    <ul class="space-y-3 text-xs text-cream/80">
+                        <li class="flex items-center gap-2">
+                            <span class="text-gold">📞</span>
+                            <span>رقم الهاتف:</span>
+                            <a href="tel:01050951653" class="font-mono text-gold font-bold dir-ltr hover:underline">01050951653</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-green-400">💬</span>
+                            <span>واتساب للطلب:</span>
+                            <a href="https://wa.me/201050951653" target="_blank" class="text-green-300 font-bold hover:underline">اضغطي للدردشة المباشرة</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-gold">📍</span>
+                            <span>توصيل لكافة المحافظات</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-gold mb-4 uppercase tracking-wider">صفحات التواصل الاجتماعي</h4>
+                    <p class="text-xs text-cream/70 mb-3">تابعي أحدث العروض والتشكيلات الجديدة:</p>
+                    <div class="flex flex-col gap-2 text-xs">
+                        <a href="https://www.facebook.com/share/1BB6dre7mp/" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-emerald-900/60 hover:bg-emerald-900 border border-emerald-800 text-cream/90 hover:text-gold transition flex items-center gap-2">
+                            <svg class="w-4 h-4 text-blue-400 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            <span>فيسبوك (Facebook Page)</span>
+                        </a>
+                        <a href="https://t.me/z010322" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-emerald-900/60 hover:bg-emerald-900 border border-emerald-800 text-cream/90 hover:text-gold transition flex items-center gap-2">
+                            <svg class="w-4 h-4 text-sky-400 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.942z"/></svg>
+                            <span>تلجرام (Telegram Channel)</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@zahra.hijab0?_r=1&_t=ZS-9AZy7uz3Zw5" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-emerald-900/60 hover:bg-emerald-900 border border-emerald-800 text-cream/90 hover:text-gold transition flex items-center gap-2">
+                            <svg class="w-4 h-4 text-pink-400 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                            <span>تيك توك (TikTok Account)</span>
+                        </a>
+                        <a href="https://wa.me/201050951653" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-emerald-900/60 hover:bg-emerald-900 border border-emerald-800 text-cream/90 hover:text-gold transition flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-400 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                            <span>واتساب مباشر (01050951653)</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-cream/60 gap-3">
+                <p>جميع الحقوق محفوظة لعلامة زهرة © 2026 ZAHRA Fashion.</p>
+                <div class="flex items-center gap-4 text-cream/50">
+                    <span>هاتف: 01050951653</span>
+                    <span>|</span>
+                    <a href="https://wa.me/201050951653" target="_blank" rel="noopener noreferrer" class="hover:text-gold">دردشة واتساب</a>
+                    <span>|</span>
+                    <a href="https://www.tiktok.com/@zahra.hijab0?_r=1&_t=ZS-9AZy7uz3Zw5" target="_blank" rel="noopener noreferrer" class="hover:text-gold">تيك توك</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- 8. Floating Sticky WhatsApp Button (Fixed on all pages) -->
+    <aside aria-label="تواصل سريع" class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
+        <!-- Tooltip label -->
+        <div class="bg-white/95 backdrop-blur-md text-emerald-950 px-3.5 py-1.5 rounded-xl shadow-lg border border-gold/40 text-xs font-bold hidden sm:flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+            <span>تحدثي معنا عبر واتساب 01050951653</span>
+        </div>
+        <!-- Button -->
+        <a href="https://wa.me/201050951653" target="_blank" class="whatsapp-float-btn w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center shadow-2xl transition hover:scale-110" title="تواصل مباشر عبر واتساب (01050951653)">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        </a>
+    </aside>
+
+    <!-- 9. Cart Slide-Over Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div id="cart-backdrop" class="absolute inset-0 bg-emerald-950/60 backdrop-blur-sm transition-opacity"></div>
+        <div class="fixed inset-y-0 left-0 max-w-full flex">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between">
+
+                <!-- Drawer Header -->
+                <div class="p-5 border-b border-blush/30 flex items-center justify-between bg-cream">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl">🛍️</span>
+                        <h3 class="font-bold text-lg text-emerald-950 font-serif-ar">سلة المشتريات</h3>
+                    </div>
+                    <button id="close-cart-btn" class="p-2 rounded-full hover:bg-emerald-50 text-emerald-900 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+
+                <!-- Drawer Content -->
+                <div id="cart-items-container" class="p-5 overflow-y-auto flex-1 space-y-3">
+                    <!-- Rendered dynamically -->
+                </div>
+
+                <!-- Drawer Footer with WhatsApp Checkout -->
+                <div class="p-5 border-t border-blush/30 bg-cream">
+                    <div class="flex justify-between items-center text-sm font-bold text-emerald-950 mb-4">
+                        <span>إجمالي المشتريات:</span>
+                        <span id="cart-total-price" class="text-lg text-emerald-900">0 ج.م</span>
+                    </div>
+
+                    <a id="checkout-whatsapp-btn" href="#" target="_blank" class="w-full py-3.5 px-4 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        <span>إتمام الطلب عبر واتساب (01050951653)</span>
+                    </a>
+                    <p class="text-[10px] text-center text-emerald-800/60 mt-2">يتم تجهيز رسالة تفصيلية بكافة المنتجات تلقائياً</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. Quick View Modal -->
+    <div id="quick-view-modal" class="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 hidden">
+        <div id="quick-view-backdrop" class="fixed inset-0 bg-emerald-950/70 backdrop-blur-sm transition-opacity"></div>
+        <div class="relative bg-white rounded-3xl max-w-xl w-full p-6 shadow-2xl border border-gold/40 z-10 overflow-hidden">
+            <button id="close-quick-view-btn" class="absolute top-4 left-4 p-2 rounded-full bg-cream hover:bg-emerald-50 text-emerald-900 transition">✕</button>
+            <div id="quick-view-content">
+                <!-- Rendered dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shared Store Engine -->
+    <script src="assets/js/store.js"></script>
+
+    <!-- Client-side Store Controller -->
+    <script>
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        // Show Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const text = document.getElementById('toast-text');
+            if (!toast || !text) return;
+            text.textContent = msg;
+            toast.classList.remove('hidden', 'opacity-0', 'translate-y-2');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.classList.add('hidden'), 300);
+            }, 3500);
+        }
+
+        // Render Products Catalog
+        function renderCatalog() {
+            const grid = document.getElementById('products-grid');
+            if (!grid) return;
+
+            const products = Store.getProducts();
+            const filtered = products.filter(p => {
+                const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+                const matchesSearch = searchQuery === '' ||
+                    p.name.toLowerCase().includes(searchQuery) ||
+                    p.category.toLowerCase().includes(searchQuery) ||
+                    (p.description && p.description.toLowerCase().includes(searchQuery));
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                  <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-blush/40 p-8">
+                    <span class="text-4xl mb-3 block">🌸</span>
+                    <h3 class="text-lg font-bold text-emerald-950 mb-1">لم نجد منتجات مطابقة للبحث</h3>
+                    <p class="text-xs text-gray-500 mb-4">جربي كتابة كلمة بحث أخرى أو تصفح الأقسام</p>
+                    <button onclick="resetFilters()" class="px-5 py-2 rounded-xl bg-emerald-900 text-gold text-xs font-bold">عرض جميع المنتجات</button>
+                  </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(p => {
+                const orderUrl = Store.getWhatsAppOrderUrl(p);
+                return `
+                  <div class="product-card group rounded-3xl bg-white border border-blush/40 overflow-hidden shadow-sm flex flex-col justify-between" id="product-${p.id}">
+                    
+                    <!-- Image Container -->
+                    <div class="relative aspect-[4/5] img-zoom-container bg-emerald-950/5">
+                      <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover object-top" onerror="this.src='assets/images/hero-banner.jpg'">
+                      
+                      <!-- Badges -->
+                      <div class="absolute top-3 right-3 flex flex-col gap-1.5 z-10">
+                        ${p.badge ? `<span class="text-[11px] font-bold px-3 py-1 rounded-full bg-gold text-emerald-950 shadow-sm">${p.badge}</span>` : ''}
+                        <span class="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-950/80 text-cream backdrop-blur-sm">${p.category}</span>
+                      </div>
+
+                      <!-- Quick View Trigger -->
+                      <button onclick="openQuickView('${p.id}')" class="absolute top-3 left-3 p-2 rounded-full bg-white/90 backdrop-blur-md shadow-sm text-emerald-900 hover:scale-110 transition" title="معاينة سريعة">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      </button>
+                    </div>
+
+                    <!-- Content Details -->
+                    <div class="p-5 flex flex-col justify-between flex-1">
+                      <div>
+                        <h3 class="font-bold text-base text-emerald-950 mb-1.5 hover:text-emerald-700 cursor-pointer transition line-clamp-1" onclick="openQuickView('${p.id}')">
+                          ${p.name}
+                        </h3>
+                        <p class="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-4">
+                          ${p.description || 'تصميم محتشم فاخر من علامة زهرة (ZAHRA) للأزياء الإسلامية.'}
+                        </p>
+                      </div>
+
+                      <div>
+                        <!-- Price & Rating -->
+                        <div class="flex items-center justify-between pt-3 border-t border-blush/30 mb-4">
+                          <div>
+                            <div class="flex items-baseline gap-1.5">
+                              <span class="text-lg font-bold text-emerald-950">${p.price} ج.م</span>
+                              ${p.originalPrice ? `<span class="text-xs text-gray-400 line-through">${p.originalPrice} ج.م</span>` : ''}
+                            </div>
+                          </div>
+                          <div class="flex items-center text-gold text-xs">
+                            <span>★★★★★</span>
+                            <span class="text-emerald-900 font-bold mr-1">${p.rating || 5}</span>
+                          </div>
+                        </div>
+
+                        <!-- Action Buttons: WhatsApp Direct Order + Add to Cart -->
+                        <div class="flex items-center gap-2">
+                          <a href="${orderUrl}" target="_blank" class="flex-1 py-2.5 px-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-sm transition flex items-center justify-center gap-1.5" title="اطلبي فوراً عبر واتساب">
+                            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                            <span>طلب واتساب</span>
+                          </a>
+
+                          <button onclick="handleAddToCart('${p.id}')" class="py-2.5 px-3.5 rounded-xl bg-emerald-900 hover:bg-emerald-800 text-gold font-bold text-xs shadow-sm transition flex items-center gap-1" title="إضافة للسلة">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                            <span>السلة</span>
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                `;
+            }).join('');
+        }
+
+        // Reset Filters
+        function resetFilters() {
+            activeCategory = 'all';
+            searchQuery = '';
+            document.getElementById('store-search').value = '';
+            document.querySelectorAll('.cat-pill-btn').forEach(b => {
+                b.classList.remove('bg-emerald-900', 'text-gold');
+                b.classList.add('bg-cream', 'text-emerald-900');
+            });
+            const firstBtn = document.querySelector('.cat-pill-btn[data-cat="all"]');
+            if (firstBtn) {
+                firstBtn.classList.add('bg-emerald-900', 'text-gold');
+                firstBtn.classList.remove('bg-cream', 'text-emerald-900');
+            }
+            renderCatalog();
+        }
+
+        // Cart Operations
+        function updateCartUI() {
+            const cart = Store.getCart();
+            const count = cart.reduce((sum, i) => sum + i.quantity, 0);
+            const total = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+
+            // Counter
+            const counterEl = document.getElementById('cart-counter');
+            if (counterEl) counterEl.textContent = count;
+
+            // Drawer Items
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total-price');
+            const checkoutBtn = document.getElementById('checkout-whatsapp-btn');
+
+            if (totalEl) totalEl.textContent = `${total} ج.م`;
+            if (checkoutBtn) checkoutBtn.href = Store.getCartWhatsAppOrderUrl();
+
+            if (container) {
+                if (cart.length === 0) {
+                    container.innerHTML = `
+                      <div class="text-center py-16 text-gray-400">
+                        <span class="text-5xl mb-2 block">🛍️</span>
+                        <p class="font-bold text-emerald-950 mb-1">سلتكِ فارغة حالياً</p>
+                        <p class="text-xs text-gray-500 mb-4">اختاري قطعتك المفضلة وأضيفيها للسلة</p>
+                      </div>
+                    `;
+                } else {
+                    container.innerHTML = cart.map(item => `
+                      <div class="flex items-center gap-3 p-3 rounded-2xl bg-cream border border-blush/40 justify-between">
+                        <img src="${item.image}" alt="${item.name}" class="w-14 h-16 rounded-xl object-cover" onerror="this.src='assets/images/hero-banner.jpg'">
+                        <div class="flex-1 text-right">
+                          <h4 class="font-bold text-xs text-emerald-950 line-clamp-1">${item.name}</h4>
+                          <span class="text-xs text-gold font-bold">${item.price} ج.م</span>
+                          <div class="flex items-center gap-2 mt-1">
+                            <button onclick="changeCartQty('${item.id}', -1)" class="w-5 h-5 rounded bg-white border text-xs font-bold">-</button>
+                            <span class="text-xs font-bold text-emerald-950">${item.quantity}</span>
+                            <button onclick="changeCartQty('${item.id}', 1)" class="w-5 h-5 rounded bg-white border text-xs font-bold">+</button>
+                          </div>
+                        </div>
+                        <button onclick="removeCartItem('${item.id}')" class="text-gray-400 hover:text-red-500 p-1">✕</button>
+                      </div>
+                    `).join('');
+                }
+            }
+        }
+
+        function handleAddToCart(id) {
+            const products = Store.getProducts();
+            const p = products.find(prod => prod.id === id);
+            if (p) {
+                Store.addToCart(p);
+                updateCartUI();
+                showToast(`تمت إضافة "${p.name}" إلى سلتكِ ✨`);
+                openCartDrawer();
+            }
+        }
+
+        function changeCartQty(id, delta) {
+            const cart = Store.getCart();
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                Store.updateCartQuantity(id, item.quantity + delta);
+                updateCartUI();
+            }
+        }
+
+        function removeCartItem(id) {
+            Store.removeFromCart(id);
+            updateCartUI();
+            showToast('تم حذف المنتج من السلة.');
+        }
+
+        // Drawer Toggles
+        function openCartDrawer() {
+            const d = document.getElementById('cart-drawer');
+            if (d) d.classList.remove('hidden');
+        }
+        function closeCartDrawer() {
+            const d = document.getElementById('cart-drawer');
+            if (d) d.classList.add('hidden');
+        }
+
+        // Quick View Modal
+        function openQuickView(id) {
+            const products = Store.getProducts();
+            const p = products.find(prod => prod.id === id);
+            if (!p) return;
+
+            const content = document.getElementById('quick-view-content');
+            const modal = document.getElementById('quick-view-modal');
+            const orderUrl = Store.getWhatsAppOrderUrl(p);
+
+            if (content) {
+                content.innerHTML = `
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+                    <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100">
+                      <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" onerror="this.src='assets/images/hero-banner.jpg'">
+                    </div>
+                    <div class="text-right">
+                      ${p.badge ? `<span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-gold text-emerald-950 mb-2 inline-block">${p.badge}</span>` : ''}
+                      <h3 class="text-xl font-bold font-serif-ar text-emerald-950 mb-1">${p.name}</h3>
+                      <p class="text-xs text-gray-400 mb-3">القسم: ${p.category}</p>
+                      
+                      <div class="flex items-baseline gap-2 mb-3">
+                        <span class="text-2xl font-bold text-emerald-900">${p.price} ج.م</span>
+                        ${p.originalPrice ? `<span class="text-sm text-gray-400 line-through">${p.originalPrice} ج.م</span>` : ''}
+                      </div>
+
+                      <p class="text-xs text-gray-600 leading-relaxed mb-6">
+                        ${p.description || 'تصميم محتشم فاخر من خامات منتقاة بعناية لتوفر الراحة والوقار في مختلف المناسبات.'}
+                      </p>
+
+                      <div class="flex flex-col gap-2.5">
+                        <a href="${orderUrl}" target="_blank" class="w-full py-3 px-4 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs shadow-md transition flex items-center justify-center gap-2">
+                          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                          <span>اطلبي الآن عبر واتساب (01050951653)</span>
+                        </a>
+                        <button onclick="handleAddToCart('${p.id}'); closeQuickView();" class="w-full py-3 px-4 rounded-xl bg-emerald-900 text-gold font-bold text-xs shadow-sm hover:bg-emerald-800 transition">
+                          إضافة إلى السلة
+                        </button>
+                      </div>
+
+                    </div>
+                  </div>
+                `;
+            }
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeQuickView() {
+            const modal = document.getElementById('quick-view-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        // Initialize Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCatalog();
+            updateCartUI();
+
+            // Category Pill Click
+            document.querySelectorAll('.cat-pill-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.cat-pill-btn').forEach(b => {
+                        b.classList.remove('bg-emerald-900', 'text-gold');
+                        b.classList.add('bg-cream', 'text-emerald-900');
+                    });
+                    btn.classList.add('bg-emerald-900', 'text-gold');
+                    btn.classList.remove('bg-cream', 'text-emerald-900');
+                    activeCategory = btn.getAttribute('data-cat');
+                    renderCatalog();
+                });
+            });
+
+            // Search input listener
+            const searchInput = document.getElementById('store-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    searchQuery = e.target.value.toLowerCase().trim();
+                    renderCatalog();
+                });
+            }
+
+            // Cart Drawer triggers
+            const openCartBtn = document.getElementById('open-cart-btn');
+            const closeCartBtn = document.getElementById('close-cart-btn');
+            const cartBackdrop = document.getElementById('cart-backdrop');
+
+            if (openCartBtn) openCartBtn.addEventListener('click', openCartDrawer);
+            if (closeCartBtn) closeCartBtn.addEventListener('click', closeCartDrawer);
+            if (cartBackdrop) cartBackdrop.addEventListener('click', closeCartDrawer);
+
+            // Quick View triggers
+            const closeQvBtn = document.getElementById('close-quick-view-btn');
+            const qvBackdrop = document.getElementById('quick-view-backdrop');
+            if (closeQvBtn) closeQvBtn.addEventListener('click', closeQuickView);
+            if (qvBackdrop) qvBackdrop.addEventListener('click', closeQuickView);
+
+            // Mobile Menu trigger
+            const mobToggle = document.getElementById('mobile-menu-toggle');
+            const mobMenu = document.getElementById('mobile-menu');
+            if (mobToggle && mobMenu) {
+                mobToggle.addEventListener('click', () => {
+                    mobMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Listen for localStorage sync changes (from Admin Dashboard)
+            window.addEventListener('zahra_products_updated', () => {
+                renderCatalog();
+            });
+            window.addEventListener('storage', (e) => {
+                if (e.key === 'zahra_products' || e.key === 'zahraa_products') renderCatalog();
+                if (e.key === 'zahra_cart' || e.key === 'zahraa_cart') updateCartUI();
+            });
+        });
+    </script>
+</body>
+
+</html>
